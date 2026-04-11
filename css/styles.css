@@ -126,11 +126,28 @@ main {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
   gap: var(--space-lg);
   padding: var(--space-xl);
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
+}
+
+#greeting {
+  grid-column: 1 / -1; /* row 1: spans both columns */
+}
+
+#timer {
+  grid-column: 1;       /* row 2, col 1 */
+}
+
+#todo {
+  grid-column: 2;       /* row 2, col 2 */
+}
+
+#links {
+  grid-column: 1;       /* row 3, col 1 */
 }
 
 /* =========================================================================
@@ -510,6 +527,13 @@ main > section {
     grid-template-columns: 1fr;
     padding: var(--space-md);
     gap: var(--space-md);
+  }
+
+  #greeting,
+  #timer,
+  #todo,
+  #links {
+    grid-column: 1;
   }
 
   header {
